@@ -6,6 +6,8 @@ import Resetpassword from './pages/Resetpassword.js';
 import Forgotpassword from './pages/Forgotpassword.js';
 import MainLayout from './components/MainLayout.js';
 import Enquiries from './pages/Enquiries.js';
+import Orders from './pages/Orders.js';
+import Customers from './pages/Customers.js';
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
         <Route path='/admin' element={<MainLayout />} >
           <Route index element={<Dashboard />} />
           <Route path='enquiries' element={<Enquiries />} />
+          <Route path='orders' element={<Orders />} />
+          <Route path='customers' element={<Customers />} />
         </Route>
       </Routes>
     </Router>

@@ -12,9 +12,14 @@ const { Header, Sider, Content } = Layout;
 
 const MainLayout = () => {
     const [collapsed, setCollapsed] = useState(false);
+    const {
+        token: { colorBgContainer },
+    } = theme.useToken();
+
     return (
         <Layout>
             <Sider trigger={null} collapsible collapsed={collapsed}>
+                <div className='logo' />
                 <div className="demo-logo-vertical" />
                 <Menu
                     theme="dark"
@@ -40,7 +45,7 @@ const MainLayout = () => {
                 />
             </Sider>
             <Layout>
-                <Header style={{ padding: 0, }}>
+                <Header style={{ padding: 0 }}>
                     <Button
                         type="text"
                         icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
@@ -56,14 +61,14 @@ const MainLayout = () => {
                     style={{
                         margin: '24px 16px',
                         padding: 24,
-                        minHeight: 280,
+                        minHeight: 280
                     }}
                 >
                     Content
                 </Content>
             </Layout>
         </Layout>
-    )
-}
+    );
+};
 
-export default MainLayout
+export default MainLayout;

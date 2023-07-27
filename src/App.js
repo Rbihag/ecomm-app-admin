@@ -12,6 +12,7 @@ import Colorlist from './pages/Colorlist.js';
 import Categorylist from './pages/Categorylist.js';
 import Brandlist from './pages/Brandlist.js';
 import Productlist from './pages/Productlist.js';
+import Couponlist from './pages/Couponlist.js';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path='list-category' element={<Categorylist />} />
           <Route path='list-brand' element={<Brandlist />} />
           <Route path='list-product' element={<Productlist />} />
+          <Route path='coupon-list' element={<Couponlist />} />
         </Route>
       </Routes>
     </Router>

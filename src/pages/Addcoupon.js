@@ -4,7 +4,7 @@ import CustomInput from '../components/CustomInput.js'
 const Addcoupon = () => {
     return (
         <div>
-            <h3 className='mb-4'>Add Coupon</h3>
+            <h3 className='mb-4 title'>Add Coupon</h3>
             <div>
                 <form action=''>
                     <CustomInput type='text' label='Enter Coupon' />

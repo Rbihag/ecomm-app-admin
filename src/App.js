@@ -8,6 +8,10 @@ import MainLayout from './components/MainLayout.js';
 import Enquiries from './pages/Enquiries.js';
 import Orders from './pages/Orders.js';
 import Customers from './pages/Customers.js';
+import Colorlist from './pages/Colorlist.js';
+import Categorylist from './pages/Categorylist.js';
+import Brandlist from './pages/Brandlist.js';
+import Productlist from './pages/Productlist.js';
 
 function App() {
   return (
@@ -21,6 +25,10 @@ function App() {
           <Route path='enquiries' element={<Enquiries />} />
           <Route path='orders' element={<Orders />} />
           <Route path='customers' element={<Customers />} />
+          <Route path='list-color' element={<Colorlist />} />
+          <Route path='list-category' element={<Categorylist />} />
+          <Route path='list-brand' element={<Brandlist />} />
+          <Route path='list-product' element={<Productlist />} />
         </Route>
       </Routes>
     </Router>

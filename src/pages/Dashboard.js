@@ -150,7 +150,7 @@ const Dashboard = () => {
                 </div>
             </div>
             <div className='mt-4'>
-                <h3 className='mb-4'>Income Statics</h3>
+                <h3 className='mb-4 title'>Income Statics</h3>
                 <div>
                     <Column {...config} />
                 </div>

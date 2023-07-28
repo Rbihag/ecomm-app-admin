@@ -3,7 +3,7 @@ import CustomInput from '../components/CustomInput.js'
 
 const Resetpassword = () => {
     return (
-        <div className="py-5" style={{ background: "#ffd333", minHeight: "100vh" }}>
+        <div className="py-5" style={{ background: "#FFDADA", minHeight: "100vh" }}>
             <br />
             <br />
             <br />
@@ -24,8 +24,8 @@ const Resetpassword = () => {
                         id="confirmpass"
                     />
                     <button
-                        className="border-0 px-3 py-2 text-white fw-bold w-100"
-                        style={{ background: "#ffd333" }}
+                        className="border-0 px-3 py-2 text-dark fw-bold w-100"
+                        style={{ background: "#FFDADA" }}
                         type="submit"
                     >
                         Confirm

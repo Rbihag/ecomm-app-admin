@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import CustomInput from '../components/CustomInput.js'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { useDispatch, useSelector } from 'react-redux'
 import { login } from '../features/auth/authSlice'
 
+
 const Login = () => {
     const dispatch = useDispatch()
+    const navigate = useNavigate()
     let schema = Yup.object().shape({
         email: Yup.string().email('Email Not Valid').required('Email Is Required'),
         password: Yup.string().required('Password Is Required'),
@@ -24,8 +26,20 @@ const Login = () => {
         },
     });
 
+    const authState = useSelector((state) => state);
+
+    const { user, isError, isSuccess, isLoading, message } = authState.auth;
+
+    useEffect(() => {
+        if (isSuccess) {
+            navigate("admin");
+        } else {
+            navigate("");
+        }
+    }, [user, isError, isSuccess, isLoading, navigate]);
+
     return (
-        <div className="py-5" style={{ background: "#ffd333", minHeight: "100vh" }}>
+        <div className="py-5" style={{ background: "#FFC1C1", minHeight: "100vh" }}>
             <br />
             <br />
             <br />
@@ -34,6 +48,9 @@ const Login = () => {
             <div className="my-5 w-25 bg-white rounded-3 mx-auto p-4">
                 <h3 className="text-center title">Login</h3>
                 <p className="text-center">Login Your Account</p>
+                <div className="error text-center">
+                    {message.message === "Rejected" ? "You are not an Admin" : ""}
+                </div>
                 <form action='' onSubmit={formik.handleSubmit}>
                     <CustomInput
                         type="text"
@@ -67,8 +84,8 @@ const Login = () => {
                         </Link>
                     </div>
                     <button
-                        className="border-0 px-3 py-2 text-white fw-bold w-100 text-center text-decoration-none fs-5"
-                        style={{ background: "#ffd333" }}
+                        className="border-0 px-3 py-2 text-dark fw-bold w-100 text-center text-decoration-none fs-5"
+                        style={{ background: "#FFDADA" }}
                         type="submit"
                     >
                         Login

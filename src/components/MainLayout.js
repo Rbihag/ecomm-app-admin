@@ -188,10 +188,9 @@ const MainLayout = () => {
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link
+                                    <Link to="/"
                                         className="dropdown-item py-1 mb-1"
                                         style={{ height: "auto", lineHeight: "20px" }}
-                                        to="/"
                                     >
                                         Signout
                                     </Link>

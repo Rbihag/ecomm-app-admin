@@ -9,6 +9,8 @@ import {
     AiOutlineUser,
     AiOutlineBgColors,
 } from 'react-icons/ai';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { Link } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
 import { IoIosNotifications } from 'react-icons/io';
@@ -178,7 +180,7 @@ const MainLayout = () => {
                                 <p className="mb-0">rbihag@icloud.com</p>
                             </div>
                             <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <li>
+                                {/* <li>
                                     <Link
                                         className="dropdown-item py-1 mb-1"
                                         style={{ height: "auto", lineHeight: "20px" }}
@@ -186,7 +188,7 @@ const MainLayout = () => {
                                     >
                                         View Profile
                                     </Link>
-                                </li>
+                                </li> */}
                                 <li>
                                     <Link to="/"
                                         className="dropdown-item py-1 mb-1"
@@ -203,9 +205,21 @@ const MainLayout = () => {
                     style={{
                         margin: '24px 16px',
                         padding: 24,
-                        minHeight: 280
+                        minHeight: 280,
+                        background: "colorBgContainer",
                     }}
                 >
+                    <ToastContainer
+                        position="top-right"
+                        autoClose={250}
+                        hideProgressBar={false}
+                        newestOnTop={true}
+                        closeOnClick
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        theme="light"
+                    />
                     <Outlet />
                 </Content>
             </Layout>
